@@ -11,7 +11,7 @@ namespace ServerConsoleApp1
     {
         public override Task<PingResult> Ping(Google.Protobuf.WellKnownTypes.Empty request, ServerCallContext context)
         {
-            return Task.FromResult(new PingResult { Result = "Pong" });
+            return Task.FromResult(new PingResult { Result = "Pong from a service that would be part of a classic nTier" });
         }
     }
 }

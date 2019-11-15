@@ -34,9 +34,10 @@ namespace UnitTestProject1
         [TestMethod]
         public void TestMethod1()
         {
-            System.Diagnostics.Debug.WriteLine($"TestMethod1: Setting up Appium");
+            System.Diagnostics.Debug.WriteLine($"Specifying the text that will be returned by the PingServiceMock to validate that the WpfClient calls this Mock and not another service.");
             PingServiceMock.PingReturn = "Pong From Mock";
 
+            System.Diagnostics.Debug.WriteLine($"TestMethod1: Setting up Appium");
             var options = new OpenQA.Selenium.Appium.AppiumOptions();
             var exeLocation = System.IO.Path.GetFullPath(@"..\..\..\..\WpfApp1\bin\Debug\netcoreapp3.0\WpfApp1.exe");
             options.AddAdditionalCapability("app",exeLocation);
