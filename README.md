@@ -8,7 +8,7 @@ Client Apps that are not dependent of other systems: Notepad, Calc, etc.  Are ea
 
 In a classic 3 Tier architecture
 
-![Deployed](.\images\deployed.png)
+![Deployed](https://github.com/patware/Pattern_UITesting/blob/master/images/Deployed.png)
 
 you have a client app (1) talking to a business tier (2) which leverages data from a database (3).  When doing any UI Testing in the Client App, the problem is that it expects a functioning Business App, which in turn requires a database.
 
@@ -36,7 +36,7 @@ A Client app will connect to Business Tiers in various ways, but modern methods 
 
 All of these methods usually include a Client Proxy and/or contract of the form of an Interface.  So, what if we could [Mock](https://en.wikipedia.org/wiki/Mock_object) that business tier using that contract ?
 
-![Mocked](.\images\mock.png)
+![Mocked](https://github.com/patware/Pattern_UITesting/blob/master/images/Mock.png)
 
 The UI Test would then:
 
