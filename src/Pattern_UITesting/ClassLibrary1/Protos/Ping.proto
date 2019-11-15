@@ -1,0 +1,12 @@
+﻿syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+option csharp_namespace = "ClassLibrary1.Protos";
+
+package Ping;
+
+service Ping{rpc Ping(google.protobuf.Empty) returns (PingResult);}
+
+message PingResult{
+	string result = 1;
+}

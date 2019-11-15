@@ -1,9 +1,0 @@
-﻿syntax = "proto3";
-
-service Temper {
-	rpc GetTemperature () returns (GetTemperatureReply) {}
-}
-
-message GetTemperatureReply {
-	int Temperature = 1;
-}

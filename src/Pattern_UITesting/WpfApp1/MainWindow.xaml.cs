@@ -25,9 +25,32 @@ namespace WpfApp1
             InitializeComponent();
         }
 
-        private void TemperatureButton_Click(object sender, RoutedEventArgs e)
+        private void PingButton_Click(object sender, RoutedEventArgs e)
         {
+            var uri = "127.0.0.1:50051";
 
+            var channel = new Grpc.Core.Channel(uri, Grpc.Core.ChannelCredentials.Insecure);
+
+            var client = new ClassLibrary1.Protos.Ping.PingClient(channel);
+
+            try
+            {
+                var pingResult = client.Ping(new Google.Protobuf.WellKnownTypes.Empty());
+                PingLabel.Content = pingResult.Result;
+            }
+            catch(Exception ex)
+            {
+                PingLabel.Content = ex.Message;
+            }
+            
+
+            channel.ShutdownAsync().Wait();
+        }
+
+        private void Hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)
+        {
+            System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo(e.Uri.AbsoluteUri) { UseShellExecute = true});
+            e.Handled = true;
         }
     }
 }
